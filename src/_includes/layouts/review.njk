@@ -1,0 +1,24 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+    <main class="mb-5">
+        <div class="row mb-5">
+            <div class="col-10">
+                <p class="text-muted mb-0">{{ page.date.toLocaleDateString("en-US", { dateStyle: "long" }) }}</p>
+                <h1 class="mb-4">{{ heading }}</h1>
+
+                <div class="et-blockquote-container">
+                    {{ content | safe }}
+                </div>
+                <p class="font-weight-bold"><a href="{{ link }}" target="_blank">Read More</a></p>
+            </div>
+            <div class="col-2">
+                {% if image %}
+                    <img class="img-fluid" src="{{ site.imagesUrl }}{{ image }}" alt="{{ heading }}">
+                {% endif %}
+            </div>
+        </div>
+    </main>
+
+{% endblock %} 
